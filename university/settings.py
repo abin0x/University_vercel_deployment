@@ -45,8 +45,16 @@ INSTALLED_APPS = [
     "corsheaders",
     'users',
     'management',
+    'payments',
 ]
 LOGIN_URL="http://127.0.0.1:5500/login.html"
+
+SITE_URL = "https://hstu-six.vercel.app/"
+
+
+# settings.py
+SSLCommerz_STORE_ID = 'abins671fc56b7ee72'
+SSLCommerz_STORE_PASS = 'abins671fc56b7ee72@ss'
 
 CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:5500',
@@ -67,11 +75,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'university.urls'
-
+import os
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

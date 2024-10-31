@@ -12,6 +12,7 @@ class Course(models.Model):
     title = models.CharField(max_length=100, validators=[validate_course_title])
     instructor = models.ForeignKey(User, on_delete=models.CASCADE, limit_choices_to={'user_type': 'teacher'})
     department = models.CharField(max_length=100,default='eee')
+    price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
     description = models.TextField()
     course_code = models.CharField(max_length=10, blank=True, null=True)
     image_url = models.URLField(max_length=500, null=True, blank=True)

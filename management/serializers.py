@@ -7,7 +7,7 @@ User = get_user_model()
 class CourseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Course
-        fields = ['id', 'title', 'department', 'description', 'course_code', 'image_url', 'created_at']
+        fields = ['id', 'title', 'department','price', 'description', 'course_code', 'image_url', 'created_at']
         read_only_fields = ['instructor', 'created_at']
 
 
